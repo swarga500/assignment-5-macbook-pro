@@ -32,7 +32,6 @@ function getInput(product,previousPrice,price){
     })
 }
 
-
 // memory button click 
 const memory8gbCost = getInput('8gb-memory', 'ex-memory-cost', 0);
 const memory16gbCost = getInput('16gb-memory', 'ex-memory-cost', 180);
@@ -42,9 +41,9 @@ const totalCost = document.getElementById('total-cost');
 const storage256 = getInput('storage-256gb', 'ex-storage-cost', 0);
 const storage512 = getInput('storage-512gb', 'ex-storage-cost', 100);
 const storage1tb = getInput('storage-1tb', 'ex-storage-cost', 180);
-// delivery button 
-const delivery1 = getInput('free-delivery', 'ex-delivery-cost', 0);
-const delivery3 = getInput('cost-delivery', 'ex-delivery-cost', 20);
+// delivery button click
+const deliveryFree = getInput('free-delivery', 'ex-delivery-cost', 0);
+const deliveryCost20 = getInput('cost-delivery', 'ex-delivery-cost', 20);
 
 // promo 
 document.getElementById('promo-apply').addEventListener('click', function(){
@@ -54,6 +53,8 @@ document.getElementById('promo-apply').addEventListener('click', function(){
         const totalText = getText('total-cost');
         const promoTotal = document.getElementById('promo-total');
         const promoTotalText = promoTotal.innerText;
+
+        // promo 20% calculate
         const promo = totalText - totalText * 0.2;
         promoTotal.innerText = promo;
 
